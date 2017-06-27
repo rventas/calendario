@@ -1,0 +1,2889 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.1.final using JasperReports Library version 6.2.1  -->
+<!-- 2017-06-27T12:19:52 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Calendario Jaime" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="475bd8f0-6e66-49ed-a9c6-a32e5aafb6e0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="403"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="0.0"/>
+			<leftPen lineWidth="0.0"/>
+			<bottomPen lineWidth="0.0"/>
+			<rightPen lineWidth="0.0"/>
+		</box>
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#EDC951">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.0"/>
+			<leftPen lineWidth="0.0"/>
+			<bottomPen lineWidth="0.0"/>
+			<rightPen lineWidth="0.0"/>
+		</box>
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<style name="table_CH" mode="Transparent" forecolor="#BFE1FF" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.0"/>
+			<leftPen lineWidth="0.0"/>
+			<bottomPen lineWidth="0.0"/>
+			<rightPen lineWidth="0.0"/>
+		</box>
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.0"/>
+			<leftPen lineWidth="0.0"/>
+			<bottomPen lineWidth="0.0"/>
+			<rightPen lineWidth="0.0"/>
+		</box>
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<style name="Lunes">
+		<paragraph lineSpacing="Single"/>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{lunes}.getClaseDia().equals("Libre")]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FFFFFF" backcolor="#EB6841">
+				<paragraph lineSpacing="Single"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="Martes">
+		<paragraph lineSpacing="Single"/>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{martes}.getClaseDia().equals("Libre")]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FFFFFF" backcolor="#EB6841">
+				<paragraph lineSpacing="Single"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="Miercoles">
+		<paragraph lineSpacing="Single"/>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{miercoles}.getClaseDia().equals("Libre")]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FFFFFF" backcolor="#EB6841" fill="Solid">
+				<paragraph lineSpacing="Single"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="Jueves">
+		<paragraph lineSpacing="Single"/>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{jueves}.getClaseDia().equals("Libre")]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FFFFFF" backcolor="#EB6841" fill="Solid">
+				<paragraph lineSpacing="Single"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="Viernes">
+		<paragraph lineSpacing="Single"/>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{viernes}.getClaseDia().equals("Libre")]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FFFFFF" backcolor="#EB6841" fill="Solid">
+				<paragraph lineSpacing="Single"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="Sabado">
+		<paragraph lineSpacing="Single"/>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{sabado}.getClaseDia().equals("Libre")]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FFFFFF" backcolor="#EB6841" fill="Solid">
+				<paragraph lineSpacing="Single"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="Domingo">
+		<paragraph lineSpacing="Single"/>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{domingo}.getClaseDia().equals("Libre")]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FFFFFF" backcolor="#EB6841" fill="Solid">
+				<paragraph lineSpacing="Single"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="cabecera_mes" forecolor="#CC333F" backcolor="#FFFFFF">
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<subDataset name="Mes" uuid="9a08c8b4-d118-45ac-9d3c-ef28c13bb6d0">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="listaSemanas" class="java.util.ArrayList">
+			<fieldDescription><![CDATA[listaSemanas]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="Semana" uuid="1db9693f-1e35-40aa-8cd4-0f9992c6d6b7">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="domingo" class="es.calendario.beans.DiaBean">
+			<fieldDescription><![CDATA[domingo]]></fieldDescription>
+		</field>
+		<field name="jueves" class="es.calendario.beans.DiaBean">
+			<fieldDescription><![CDATA[jueves]]></fieldDescription>
+		</field>
+		<field name="lunes" class="es.calendario.beans.DiaBean">
+			<fieldDescription><![CDATA[lunes]]></fieldDescription>
+		</field>
+		<field name="martes" class="es.calendario.beans.DiaBean">
+			<fieldDescription><![CDATA[martes]]></fieldDescription>
+		</field>
+		<field name="miercoles" class="es.calendario.beans.DiaBean">
+			<fieldDescription><![CDATA[miercoles]]></fieldDescription>
+		</field>
+		<field name="sabado" class="es.calendario.beans.DiaBean">
+			<fieldDescription><![CDATA[sabado]]></fieldDescription>
+		</field>
+		<field name="viernes" class="es.calendario.beans.DiaBean">
+			<fieldDescription><![CDATA[viernes]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="ANYO" class="java.lang.String"/>
+	<parameter name="IMG" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="abril" class="es.calendario.beans.MesBean">
+		<fieldDescription><![CDATA[abril]]></fieldDescription>
+	</field>
+	<field name="agosto" class="es.calendario.beans.MesBean">
+		<fieldDescription><![CDATA[agosto]]></fieldDescription>
+	</field>
+	<field name="diciembre" class="es.calendario.beans.MesBean">
+		<fieldDescription><![CDATA[diciembre]]></fieldDescription>
+	</field>
+	<field name="enero" class="es.calendario.beans.MesBean">
+		<fieldDescription><![CDATA[enero]]></fieldDescription>
+	</field>
+	<field name="febrero" class="es.calendario.beans.MesBean">
+		<fieldDescription><![CDATA[febrero]]></fieldDescription>
+	</field>
+	<field name="julio" class="es.calendario.beans.MesBean">
+		<fieldDescription><![CDATA[julio]]></fieldDescription>
+	</field>
+	<field name="junio" class="es.calendario.beans.MesBean">
+		<fieldDescription><![CDATA[junio]]></fieldDescription>
+	</field>
+	<field name="marzo" class="es.calendario.beans.MesBean">
+		<fieldDescription><![CDATA[marzo]]></fieldDescription>
+	</field>
+	<field name="mayo" class="es.calendario.beans.MesBean">
+		<fieldDescription><![CDATA[mayo]]></fieldDescription>
+	</field>
+	<field name="noviembre" class="es.calendario.beans.MesBean">
+		<fieldDescription><![CDATA[noviembre]]></fieldDescription>
+	</field>
+	<field name="octubre" class="es.calendario.beans.MesBean">
+		<fieldDescription><![CDATA[octubre]]></fieldDescription>
+	</field>
+	<field name="septiembre" class="es.calendario.beans.MesBean">
+		<fieldDescription><![CDATA[septiembre]]></fieldDescription>
+	</field>
+	<pageHeader>
+		<band height="100">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="100" forecolor="#00A0B0" uuid="b21c46ca-4d8e-4b57-9184-3a26eccdb737"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="54" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ANYO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="680" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<image scaleImage="RetainShape" hAlign="Center">
+				<reportElement x="150" y="480" width="242" height="200" uuid="e47ee094-ab5d-459c-bff9-4b5f31f508a8">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box leftPadding="0"/>
+				<imageExpression><![CDATA[$P{IMG}]]></imageExpression>
+			</image>
+			<componentElement>
+				<reportElement key="table 1" style="table" x="290" y="330" width="80" height="50" uuid="90eee0fd-13ab-4178-a162-baaecd4ef51f"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Semana" uuid="da50988e-61f9-4cde-aaf4-b0d514b449dd">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{noviembre}.getListaSemanas())]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="105" uuid="c6d4df7c-c6cd-4f75-8ad0-6fa1436a1591">
+						<jr:tableHeader style="table_TH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="105" height="15" forecolor="#FFFFFF" uuid="415767a0-e62e-4e8b-a042-2961c781fb3c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Open Sans" size="10"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Noviembre]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:column width="15" uuid="62855971-ff37-4763-8bf5-01c9c803ce4e">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="8655fec3-8edf-4b60-ab48-cedc94dbad72"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[L]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Lunes" x="0" y="0" width="15" height="14" uuid="ad31d11a-8cd6-4ff6-bf89-5d88584d4c0b"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{lunes}.getNumDiaMes() == 0 ? "" : $F{lunes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="bc953569-ba18-4d36-a99f-1bb886ce0047">
+										<printWhenExpression><![CDATA[$F{lunes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="cf926d6b-6769-4ab9-9903-d233cec8f5b7">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="74db9804-72f7-4c2d-934c-447ac35561de"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[M]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Martes" x="0" y="0" width="15" height="14" uuid="0287b4c4-2990-4b75-8308-32565253bf72"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{martes}.getNumDiaMes() == 0 ? "" : $F{martes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="fb3e33f5-a3aa-4ac6-a94b-c313a61127f8">
+										<printWhenExpression><![CDATA[$F{martes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="d338662b-a2b6-48f9-acd8-0111651afdd5">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="eb35f6c9-1541-4e11-8321-16de444ac59c"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[Mi]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Miercoles" x="0" y="0" width="15" height="14" uuid="fbbf78da-2d8e-4858-a207-63b054f5d65c"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{miercoles}.getNumDiaMes() == 0 ? "" : $F{miercoles}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="bcfc80dd-e74f-453c-8060-602b6a56ab14">
+										<printWhenExpression><![CDATA[$F{miercoles}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="5914c6cd-011e-4fd2-bef0-70411e539198">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="def4dd39-4f23-4ac3-9387-bd7d35b549fa"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[J]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Jueves" x="0" y="0" width="15" height="14" uuid="728769b2-39c7-462f-bbba-8eee40fb21f3"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{jueves}.getNumDiaMes() == 0 ? "" : $F{jueves}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="300117d6-8d52-4ea8-a9fe-6ab5c82f580a">
+										<printWhenExpression><![CDATA[$F{jueves}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="b55dba9e-b84e-4f0a-8c4a-53152f1ed91c">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="808a1488-3c4c-4f2e-bf93-5d96a699981e"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[V]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Viernes" x="0" y="0" width="15" height="14" uuid="7ef78377-bc26-46e8-9e3c-2589dce9fc56"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{viernes}.getNumDiaMes() == 0 ? "" : $F{viernes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="3d264972-867a-4582-b893-80689afe27a2">
+										<printWhenExpression><![CDATA[$F{viernes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="8af7e876-7df0-4bca-84fd-446a5117c190">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="d49f0478-6d16-49bd-8f70-22ed1f5aed03"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[S]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Sabado" x="0" y="0" width="15" height="14" uuid="dc113670-8c61-4e81-8405-6176c9190993"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{sabado}.getNumDiaMes() == 0 ? "" : $F{sabado}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="5449292b-ffc1-428e-905a-15d71c42c1c4">
+										<printWhenExpression><![CDATA[$F{sabado}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="fe571529-448a-4cee-bf54-b6cf741683dd">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="b88507f5-3d1b-48d8-a8bd-c2214a1e7569"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[D]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Domingo" x="0" y="0" width="15" height="14" uuid="bf75794c-69c3-47b8-9975-f841559c198d"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{domingo}.getNumDiaMes() == 0 ? "" : $F{domingo}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="531f8639-57d2-4773-af0e-ae2ef7c15021">
+										<printWhenExpression><![CDATA[$F{domingo}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 1" style="table" x="430" y="10" width="80" height="50" uuid="4b97b718-13cb-46fe-97ca-f31157f5d225"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Semana" uuid="9bc86545-4432-4a34-8601-0401b40959a1">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{abril}.getListaSemanas())]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="105" uuid="3cc06666-e820-42ac-932a-755d25cb1478">
+						<jr:tableHeader style="table_TH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="105" height="15" forecolor="#FFFFFF" uuid="47d120fc-f76a-4577-8158-dc7b51170919"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Open Sans" size="10"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Abril]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:column width="15" uuid="9c408d18-099f-4b0b-a604-620493773cc9">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="c28e4ff7-d1a3-48ef-8856-0b40d107af8d"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[L]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Lunes" x="0" y="0" width="15" height="14" uuid="7dea15d7-e4bc-4a8c-b621-c6c855b38943"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{lunes}.getNumDiaMes() == 0 ? "" : $F{lunes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="07f20c64-2d70-468a-a91b-2a46dfd820a1">
+										<printWhenExpression><![CDATA[$F{lunes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="e8453f46-fd94-4100-acb7-cd181ae6f2d3">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="883362d6-ffdd-4fbe-bc85-c68a87a90654"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[M]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Martes" x="0" y="0" width="15" height="14" uuid="216d8e2b-d3f3-41d8-af7d-512ada51ec83"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{martes}.getNumDiaMes() == 0 ? "" : $F{martes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="ca8f995e-5c32-41c7-913b-c4246ecd5d18">
+										<printWhenExpression><![CDATA[$F{martes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="40a4e07c-3101-4f03-9b17-8c907e699c68">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="7c2c85bc-4dca-4525-a327-3a5a3967def9"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[Mi]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Miercoles" x="0" y="0" width="15" height="14" uuid="c1004781-372e-4c59-a144-b56cf180604a"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{miercoles}.getNumDiaMes() == 0 ? "" : $F{miercoles}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="9270c8fc-f3dc-4932-a7bd-63ae7884c771">
+										<printWhenExpression><![CDATA[$F{miercoles}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="83d4ee84-ef61-4aa1-a621-35ebc8b23419">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="6031967b-4642-46c9-a713-7daa9bf5a5cb"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[J]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Jueves" x="0" y="0" width="15" height="14" uuid="fb4f4ee2-470b-4c45-8677-c411d4fba195"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{jueves}.getNumDiaMes() == 0 ? "" : $F{jueves}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="a9f7bee6-253a-48ef-9c25-805266cf5571">
+										<printWhenExpression><![CDATA[$F{jueves}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="3af3d264-9f79-4b3a-9981-4f977acf4edc">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="be9ad146-f573-4526-a23e-0a925f38c478"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[V]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Viernes" x="0" y="0" width="15" height="14" uuid="37d5ad82-c743-48fd-b0e0-a1f5c3fcbbbe"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{viernes}.getNumDiaMes() == 0 ? "" : $F{viernes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="70dc4bdd-9de7-418a-84c3-ccb179855248">
+										<printWhenExpression><![CDATA[$F{viernes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="fd65540b-03c2-4abf-97dd-0e5c27ad0f47">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="325f480a-1634-4f15-958e-6a7884de5fe0"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[S]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Sabado" x="0" y="0" width="15" height="14" uuid="0a6789f8-731f-4cbd-a334-6ab5b18c78c0"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{sabado}.getNumDiaMes() == 0 ? "" : $F{sabado}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="99dcd350-6127-4d20-9b3a-15129d444217">
+										<printWhenExpression><![CDATA[$F{sabado}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="b5e4dda7-5275-4209-9cc3-c403bce2964f">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="05e127eb-deb5-4856-bddd-3ab3c4065db3"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[D]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Domingo" x="0" y="0" width="15" height="14" uuid="d2f740c2-cb48-4e43-a94b-6536b46b9a4f"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{domingo}.getNumDiaMes() == 0 ? "" : $F{domingo}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="5d255167-a163-478b-bcc8-4bf5e00d1945">
+										<printWhenExpression><![CDATA[$F{domingo}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 1" style="table" x="150" y="170" width="80" height="50" uuid="5beecbb4-972c-4127-a27f-2ff612a4ce9a"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Semana" uuid="5e93a95b-0219-46b3-927d-c1fa4d7c69d2">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{junio}.getListaSemanas())]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="105" uuid="53590ee3-26f4-49f4-8ac6-c14916e1c970">
+						<jr:tableHeader style="table_TH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="105" height="15" forecolor="#FFFFFF" uuid="d7af6d62-d490-40ea-b177-5d9c3858d61b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Open Sans" size="10"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Junio]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:column width="15" uuid="2782a0db-acf9-438c-9701-72f04b027891">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="0af9d92e-5be8-45ed-992d-b0c51eecf4cf"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[L]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Lunes" x="0" y="0" width="15" height="14" uuid="24982ce4-39af-496a-8e67-9738deffb1a3"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{lunes}.getNumDiaMes() == 0 ? "" : $F{lunes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="69a2ccc6-860a-4211-be09-0ef9b4fe8575">
+										<printWhenExpression><![CDATA[$F{lunes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="6195139f-c469-41e3-b924-e3ae55e22ffc">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="7628d075-eea8-4b19-b895-da9a3061e335"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[M]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Martes" x="0" y="0" width="15" height="14" uuid="f613beee-13ef-4cd6-ba2f-577588aed035"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{martes}.getNumDiaMes() == 0 ? "" : $F{martes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="dbd52733-0c7c-46f1-ad41-c1f243e7c097">
+										<printWhenExpression><![CDATA[$F{martes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="28a56980-b304-4c7a-bdab-422f3c0d238a">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="8e943ca9-24e6-4b57-861a-0508dcdbe04e"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[Mi]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Miercoles" x="0" y="0" width="15" height="14" uuid="ebfe40e9-fc90-4c1f-b948-ba7fe54234ea"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{miercoles}.getNumDiaMes() == 0 ? "" : $F{miercoles}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="4e0743fe-70a9-4cbf-a9eb-a643d839a38c">
+										<printWhenExpression><![CDATA[$F{miercoles}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="b30c4324-9cef-4353-b755-21a41c4726eb">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="c4ee59dc-49a4-4ad1-9fe3-da4bf9002f81"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[J]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Jueves" x="0" y="0" width="15" height="14" uuid="46fd2846-c8fd-4bd7-bb09-d84ebfbc021f"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{jueves}.getNumDiaMes() == 0 ? "" : $F{jueves}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="261007eb-9725-4e1b-be7c-a60d3fba5641">
+										<printWhenExpression><![CDATA[$F{jueves}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="0f85a122-cd16-4809-8235-3cf034778a94">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="4f0c5e5d-8ebe-47c2-af03-b8c5b45e9f0a"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[V]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Viernes" x="0" y="0" width="15" height="14" uuid="32fe3da7-cfaa-4971-8f21-c57138ba30e5"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{viernes}.getNumDiaMes() == 0 ? "" : $F{viernes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="a49f94a7-b2eb-4602-85cf-b7bd1c48cc17">
+										<printWhenExpression><![CDATA[$F{viernes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="44e3988f-eec9-4f71-b95d-ddf327fe3a03">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="7ef32074-2ba2-4c2f-b538-6bc650953658"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[S]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Sabado" x="0" y="0" width="15" height="14" uuid="613228aa-4c0a-442f-a065-328ac2aad487"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{sabado}.getNumDiaMes() == 0 ? "" : $F{sabado}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="47698072-41f9-458d-866b-1c2ab334378b">
+										<printWhenExpression><![CDATA[$F{sabado}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="81529e7c-96e5-485b-8c1c-399b6c32c138">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="03c19e12-3339-4843-8e1e-657775a9f662"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[D]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Domingo" x="0" y="0" width="15" height="14" uuid="3f93662b-58d7-40a4-a5b0-e6f97705dfc0"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{domingo}.getNumDiaMes() == 0 ? "" : $F{domingo}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="bbf0c32e-ba76-4c78-b9c5-ade32f75b0fb">
+										<printWhenExpression><![CDATA[$F{domingo}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 1" style="table" x="430" y="330" width="80" height="50" uuid="28603d7b-85b8-4e98-a27a-9bd8df51add4"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Semana" uuid="8f80b06d-46a0-4f49-adde-72a94a1f8e3f">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{diciembre}.getListaSemanas())]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="105" uuid="da7086ff-9765-4cbf-b7c3-ecd2297913e0">
+						<jr:tableHeader style="table_TH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="105" height="15" forecolor="#FFFFFF" uuid="3caff37c-c03f-48bd-b1a5-9dc56095d0f2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Open Sans" size="10"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Diciembre]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:column width="15" uuid="edbe05e5-fef7-4cad-89fe-764f4ebd8f0f">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="7ebb110a-3a6d-456d-82e7-42731e8fb993"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[L]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Lunes" x="0" y="0" width="15" height="14" uuid="f8d500f4-10aa-4332-910f-b076d59962b9"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{lunes}.getNumDiaMes() == 0 ? "" : $F{lunes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="adb2705d-4cd9-42aa-bc13-699ae70fd0e9">
+										<printWhenExpression><![CDATA[$F{lunes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="2abda545-5708-4978-8d98-06669bdd1039">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="0f274a6d-8dad-4b14-8c3b-13f96656fea0"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[M]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Martes" x="0" y="0" width="15" height="14" uuid="2baa250d-9736-4f4c-9f08-9fcebdaba884"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{martes}.getNumDiaMes() == 0 ? "" : $F{martes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="6069815b-f75d-48df-8b1e-2d85977decf0">
+										<printWhenExpression><![CDATA[$F{martes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="b85f0945-4ee9-4202-b0f2-70da49220bf0">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="e60a2230-3afa-4c85-a504-38701c976cf1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[Mi]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Miercoles" x="0" y="0" width="15" height="14" uuid="6a5a2a16-16e1-48c8-ac36-971105785882"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{miercoles}.getNumDiaMes() == 0 ? "" : $F{miercoles}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="5c41fd1a-417f-489b-9b72-c6c7649725c9">
+										<printWhenExpression><![CDATA[$F{miercoles}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="ffaeaf69-6cf0-4c46-adce-96fc614f47ee">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="84bd89c7-5053-4c10-b3bd-a3a3fa5183c5"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[J]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Jueves" x="0" y="0" width="15" height="14" uuid="a9f52025-b016-4cec-a557-8da1779b2fd9"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{jueves}.getNumDiaMes() == 0 ? "" : $F{jueves}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="46d8b398-eee0-4b02-b556-25936b5b1454">
+										<printWhenExpression><![CDATA[$F{jueves}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="6a4b5f84-2eec-41b2-94e9-797126773cb5">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="4df9316c-6a70-4601-8a31-868e497fada2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[V]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Viernes" x="0" y="0" width="15" height="14" uuid="b674a78c-8aaa-4404-b096-134137cfe114"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{viernes}.getNumDiaMes() == 0 ? "" : $F{viernes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="9af58e73-c7fb-4c1c-b0b8-e8532f7fdb0e">
+										<printWhenExpression><![CDATA[$F{viernes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="02b6e77e-3611-46ce-8ba3-5053f5fe7bdb">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="29875c2a-c396-4a55-92a3-a7c80b30e38b"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[S]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Sabado" x="0" y="0" width="15" height="14" uuid="10235d46-8bb2-44ef-933d-61e0f562f344"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{sabado}.getNumDiaMes() == 0 ? "" : $F{sabado}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="f73aad8c-48d0-4207-9915-29a258b32a71">
+										<printWhenExpression><![CDATA[$F{sabado}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="2d6c2d61-354a-496f-9d88-547b614d6b23">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="9902837b-d18d-44a5-92ee-a71b689c66c5"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[D]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Domingo" x="0" y="0" width="15" height="14" uuid="362de62e-fabe-4e7b-8541-288ced8c8584"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{domingo}.getNumDiaMes() == 0 ? "" : $F{domingo}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="5bd70aa0-69f3-4dfd-9032-3c81b7bea4af">
+										<printWhenExpression><![CDATA[$F{domingo}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 1" style="table" x="10" y="330" width="80" height="50" uuid="26624089-4547-4397-a297-9444d05f7e4a"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Semana" uuid="f0a1ef54-6040-404c-b7f4-1c14021ed9f5">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{septiembre}.getListaSemanas())]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="105" uuid="a5b0bc8e-a95d-4df8-a973-13919b81c40f">
+						<jr:tableHeader style="table_TH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="105" height="15" forecolor="#FFFFFF" uuid="6021d3b8-19ff-4413-adbf-f6d684810a9e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Open Sans" size="10"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Septiembre]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:column width="15" uuid="c0c13e03-cd28-4277-a9dd-0fdfde2c6a38">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="de361a0b-2b1d-4cb2-a106-febbd8e983ae"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[L]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Lunes" x="0" y="0" width="15" height="14" uuid="34126f37-807b-4467-905a-aae86b98ec18"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{lunes}.getNumDiaMes() == 0 ? "" : $F{lunes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="188eaa48-8308-467a-9c38-3bc38620073d">
+										<printWhenExpression><![CDATA[$F{lunes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="7442c4da-a2a4-495e-8f9a-6820e9de61b3">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="0b867b71-8b91-4c7a-937c-7a7ee4d4842f"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[M]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Martes" x="0" y="0" width="15" height="14" uuid="87a85d40-7da2-4d56-9e4a-341c533bf0ac"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{martes}.getNumDiaMes() == 0 ? "" : $F{martes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="7dcb2389-f915-4848-a4f6-05a51ebf8193">
+										<printWhenExpression><![CDATA[$F{martes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="77eb6b72-38fc-44fe-9b18-00f9fb15b353">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="fd38d91a-347e-47f0-b1d3-856d50948d59"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[Mi]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Miercoles" x="0" y="0" width="15" height="14" uuid="b3da97cd-34ff-4f2e-9172-7de1ed86026b"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{miercoles}.getNumDiaMes() == 0 ? "" : $F{miercoles}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="fa934795-d6b3-4254-b746-41589db8076d">
+										<printWhenExpression><![CDATA[$F{miercoles}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="a9ad21cf-28b8-47f9-82c8-fd2e18124dd8">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="42f7e6e1-6cf8-4767-a2e7-e94a226a3515"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[J]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Jueves" x="0" y="0" width="15" height="14" uuid="09bae9b7-ee98-44bb-9a85-639a14713779"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{jueves}.getNumDiaMes() == 0 ? "" : $F{jueves}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="334da3c0-7545-4022-b6d3-7d9d5e4c704b">
+										<printWhenExpression><![CDATA[$F{jueves}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="4dbba323-e75e-4fe2-871c-55116982cc54">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="96bd1a8f-a593-46b8-812a-8096eb6e09dc"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[V]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Viernes" x="0" y="0" width="15" height="14" uuid="fa2ed96b-240b-48ba-8b5a-19f879bd05c0"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{viernes}.getNumDiaMes() == 0 ? "" : $F{viernes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="7cc0ffda-a527-4424-b7ae-d63ec027d71c">
+										<printWhenExpression><![CDATA[$F{viernes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="85795a2d-368e-42bd-b0d5-f324649661a4">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="8e3dd141-2aa1-4420-944a-14258220a557"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[S]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Sabado" x="0" y="0" width="15" height="14" uuid="21516552-ac06-4216-950d-f4f655413dc2"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{sabado}.getNumDiaMes() == 0 ? "" : $F{sabado}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="62b2cbc4-0e5f-4350-a005-a729738a2f05">
+										<printWhenExpression><![CDATA[$F{sabado}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="15559465-0656-485f-977d-b535e209af6c">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="499375aa-84c6-4684-8a37-619eb98f79e4"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[D]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Domingo" x="0" y="0" width="15" height="14" uuid="adc76841-7265-4c2f-a11c-6da6b876df9d"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{domingo}.getNumDiaMes() == 0 ? "" : $F{domingo}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="a1bf45b4-e596-419c-a71b-d1a777ecc322">
+										<printWhenExpression><![CDATA[$F{domingo}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 1" style="table" x="290" y="10" width="80" height="50" uuid="fc3b19be-349a-4cfb-be0a-6273201cfb97"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Semana" uuid="e04f2b35-997c-49f5-ad99-62d54b75848a">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{marzo}.getListaSemanas())]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="105" uuid="dbe7239c-24c7-4682-9231-c6bc4a6e9afb">
+						<jr:tableHeader style="table_TH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="105" height="15" forecolor="#FFFFFF" uuid="6a94076c-0638-4aa2-939c-678e3d3ea8ac"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Open Sans" size="10"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Marzo]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:column width="15" uuid="fb157e00-81d8-48c5-861a-ebc58a12ea0f">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="bf527117-fc88-481e-ba41-65cfc02e599c"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[L]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Lunes" x="0" y="0" width="15" height="14" uuid="0378d74e-7524-46c8-a115-9e4545e881c3"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{lunes}.getNumDiaMes() == 0 ? "" : $F{lunes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="b49d741b-68ec-4a52-ad34-c1ca273f61f1">
+										<printWhenExpression><![CDATA[$F{lunes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="e04634fd-2998-4ba4-a43f-c4e65479d8f6">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="1f6a33cc-d1e1-4581-9a4c-1eb46e1bfb94"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[M]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Martes" x="0" y="0" width="15" height="14" uuid="3f0db80c-9f37-4b39-b012-eadd40d0ac13"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{martes}.getNumDiaMes() == 0 ? "" : $F{martes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="26fea3ea-149c-4891-b167-f082e690c4f1">
+										<printWhenExpression><![CDATA[$F{martes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="bdc8e75a-5cba-4bc7-b3a9-05b1f9b9bac1">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="701b2600-1d1b-4d9b-908e-d4b936e5a5ef"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[Mi]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Miercoles" x="0" y="0" width="15" height="14" uuid="0e8fe690-db9d-4dde-a19c-b03416475285"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{miercoles}.getNumDiaMes() == 0 ? "" : $F{miercoles}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="f6c76ed9-4d18-4795-a4dd-bf098665a20c">
+										<printWhenExpression><![CDATA[$F{miercoles}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="878485eb-e0ea-488c-99c1-9f985cab6d1d">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="71487dbb-7ffc-4b53-9cfc-618ce5a1604b"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[J]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Jueves" x="0" y="0" width="15" height="14" uuid="f2ce5ea2-e5fc-4aaf-b216-6a173805a30c"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{jueves}.getNumDiaMes() == 0 ? "" : $F{jueves}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="ab45b186-bc71-41de-902c-4aaba5d88d81">
+										<printWhenExpression><![CDATA[$F{jueves}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="0239a2cf-0afe-40a6-a811-9cd5c7a753de">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="6b1c39a2-6c9f-4b36-aa46-97737f7d63fc"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[V]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Viernes" x="0" y="0" width="15" height="14" uuid="0e0ab8fa-11df-4331-8b0a-8090ce451a46"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{viernes}.getNumDiaMes() == 0 ? "" : $F{viernes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="ec5f7cbf-d71e-4d7f-9992-8c6f6a7a883a">
+										<printWhenExpression><![CDATA[$F{viernes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="4aa1b759-33c0-418b-bcd0-cf054ae7ebbf">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="7a365c4b-3376-4603-8f2c-3ba6e73c8ad9"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[S]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Sabado" x="0" y="0" width="15" height="14" uuid="65d28787-5c53-45be-b2d8-0d64b2ec852e"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{sabado}.getNumDiaMes() == 0 ? "" : $F{sabado}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="902ddfa0-b926-4927-9668-7a0421bf0156">
+										<printWhenExpression><![CDATA[$F{sabado}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="6c2ec44c-bf94-480e-b4cb-c125276d1888">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="cb829d9a-ef03-44ac-a6ae-d8b2f776e2d0"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[D]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Domingo" x="0" y="0" width="15" height="14" uuid="20fb2cc7-4b96-409f-8c5a-718d475177fb"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{domingo}.getNumDiaMes() == 0 ? "" : $F{domingo}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="1690f9ad-30b9-4771-a3e0-409cf6d4cd9f">
+										<printWhenExpression><![CDATA[$F{domingo}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 1" style="table" x="290" y="170" width="80" height="50" uuid="6fcad185-99b7-497e-aa64-cf0737d06a05"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Semana" uuid="5896ce9e-29d7-411d-a930-cbe87509bfec">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{julio}.getListaSemanas())]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="105" uuid="d7def1e3-c3d8-4888-8bec-90c5518ad87f">
+						<jr:tableHeader style="table_TH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="105" height="15" forecolor="#FFFFFF" uuid="475544d6-3f73-485b-a7fa-c803456d7fe8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Open Sans" size="10"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Julio]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:column width="15" uuid="c70e9261-c8eb-4765-82b6-2714f475e79a">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="2c659359-3d64-4536-9acc-789e797464fe"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[L]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Lunes" x="0" y="0" width="15" height="14" uuid="d110ba07-276a-494e-bf85-ba41c8676a73"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{lunes}.getNumDiaMes() == 0 ? "" : $F{lunes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="fa29e80f-8bef-4065-afb0-0cb6fe735a7c">
+										<printWhenExpression><![CDATA[$F{lunes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="dd563e93-f28a-48ea-b889-1e604c5adcdc">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="8e884454-8bd6-47e9-bcf5-497ae05d7dac"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[M]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Martes" x="0" y="0" width="15" height="14" uuid="c95017ca-2b10-4e7c-984e-11f8eb8c2d26"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{martes}.getNumDiaMes() == 0 ? "" : $F{martes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="a77345ff-c5a8-4621-8efc-971c05f84817">
+										<printWhenExpression><![CDATA[$F{martes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="fedf7717-6392-4212-977d-8140635e460d">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="b0bed060-bd0f-4f9b-b8e4-db143eded28e"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[Mi]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Miercoles" x="0" y="0" width="15" height="14" uuid="b43a4877-51b9-4e5f-856c-b5d7c7a0acc8"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{miercoles}.getNumDiaMes() == 0 ? "" : $F{miercoles}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="64348f88-444b-44c7-b668-6d928aabc9e0">
+										<printWhenExpression><![CDATA[$F{miercoles}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="0cbab9d6-4039-4510-a6e9-99fb3c8dc8ad">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="6a1e973a-8902-40c2-a401-6b95208e83a4"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[J]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Jueves" x="0" y="0" width="15" height="14" uuid="d49d8492-240e-484e-858a-be003b847006"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{jueves}.getNumDiaMes() == 0 ? "" : $F{jueves}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="49bf72cf-ad70-4334-bd27-0923a283dc5f">
+										<printWhenExpression><![CDATA[$F{jueves}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="9fcd775c-8476-44f3-a4a4-300267598743">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="12e8f3a0-78d6-4511-a138-d26ef12951fa"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[V]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Viernes" x="0" y="0" width="15" height="14" uuid="c7826e9a-7dfb-4e3f-967b-16db9178a802"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{viernes}.getNumDiaMes() == 0 ? "" : $F{viernes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="3b68031d-1487-4e3b-bc98-6d29f835e629">
+										<printWhenExpression><![CDATA[$F{viernes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="6388bed9-e41d-4dbd-838e-cee0197c0422">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="a8dff379-2817-498a-9cde-9c5d680287ee"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[S]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Sabado" x="0" y="0" width="15" height="14" uuid="d2cad77e-fe35-4fa0-939e-43c5b648c36b"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{sabado}.getNumDiaMes() == 0 ? "" : $F{sabado}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="a969b103-338e-4e6c-b7d9-f3413f0f9e91">
+										<printWhenExpression><![CDATA[$F{sabado}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="b1d0650b-68bb-4147-b3ce-8280605d265b">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="20c22119-80df-4d9a-a80e-2a2b5f41fe80"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[D]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Domingo" x="0" y="0" width="15" height="14" uuid="0d1615a9-e051-46a9-b95d-7358b6fc5b58"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{domingo}.getNumDiaMes() == 0 ? "" : $F{domingo}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="7fc12954-f48f-41e6-8f5f-c32c2aced997">
+										<printWhenExpression><![CDATA[$F{domingo}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 1" style="table" x="150" y="330" width="80" height="50" uuid="579ae7f4-9f42-4286-ab80-39843acd27aa"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Semana" uuid="b289d98d-fd97-434e-83c4-fe3e02186ea5">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{octubre}.getListaSemanas())]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="105" uuid="af66be7c-4f09-4f54-b021-61209495ee77">
+						<jr:tableHeader style="table_TH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="105" height="15" forecolor="#FFFFFF" uuid="012d47fd-077a-4741-85f6-d448ef801e55"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Open Sans" size="10"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Octubre]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:column width="15" uuid="c675c1a5-e432-4a4e-87b7-3081ddc04b22">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="9c888dc8-26d9-4325-a295-ed0700f0e142"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[L]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Lunes" x="0" y="0" width="15" height="14" uuid="968eb7c8-33b1-4065-810f-f3c1f363253a"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{lunes}.getNumDiaMes() == 0 ? "" : $F{lunes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="103a322d-cbe3-4cfd-87a5-b544c592e2ed">
+										<printWhenExpression><![CDATA[$F{lunes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="bc25d4ed-35bb-497d-bc97-9798c3910103">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="1c00a82f-f547-4f8e-a8d7-dd3c233ecd4b"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[M]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Martes" x="0" y="0" width="15" height="14" uuid="b04ec66d-37dc-4889-900a-e12d9838676b"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{martes}.getNumDiaMes() == 0 ? "" : $F{martes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="cec124f0-a7fa-4476-bde0-d0d23bdcf9c6">
+										<printWhenExpression><![CDATA[$F{martes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="3d5751f9-d1ff-4945-9411-567ce09e715e">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="73b015af-ec53-48e8-bdb7-b829b96e40a7"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[Mi]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Miercoles" x="0" y="0" width="15" height="14" uuid="7eda8fde-a53a-40a7-8eb0-ffbfb2e5b231"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{miercoles}.getNumDiaMes() == 0 ? "" : $F{miercoles}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="1b20a628-a76e-458a-b622-34e2bf0732b3">
+										<printWhenExpression><![CDATA[$F{miercoles}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="2194d679-c85a-4caa-bdbf-fde46ace0124">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="569f0769-bab5-4e01-9847-d480c371dcfc"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[J]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Jueves" x="0" y="0" width="15" height="14" uuid="ba9b548f-803f-4d17-b0f9-f897a0e36568"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{jueves}.getNumDiaMes() == 0 ? "" : $F{jueves}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="159f9c4e-a598-41eb-8632-ced13106b74a">
+										<printWhenExpression><![CDATA[$F{jueves}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="a13989f3-955a-4ea9-b124-5cb7e4559333">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="6fda51ba-bef9-4477-9aff-7dd8600296ae"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[V]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Viernes" x="0" y="0" width="15" height="14" uuid="f7888556-039a-4b34-b544-85c3ac17ba72"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{viernes}.getNumDiaMes() == 0 ? "" : $F{viernes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="9dda0962-f41e-4f71-a6a9-d460b2b751a1">
+										<printWhenExpression><![CDATA[$F{viernes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="ba06fe4a-96ad-49e9-a5d1-1d2e59b99c4e">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="5001b969-4722-41a2-a042-03712c26a735"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[S]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Sabado" x="0" y="0" width="15" height="14" uuid="eddef86c-f8b4-45e8-9c3c-67e30837de65"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{sabado}.getNumDiaMes() == 0 ? "" : $F{sabado}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="80af1c23-a5e5-41b9-ade0-e0d34e734037">
+										<printWhenExpression><![CDATA[$F{sabado}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="8ae91bcd-a274-49b8-b63d-fe5fad9023bd">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="e3fb9ce3-41cb-4e7f-a7a0-9f92802d6a25"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[D]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Domingo" x="0" y="0" width="15" height="14" uuid="bd50b097-c7ba-45a1-9d27-b88a52ba2fa8"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{domingo}.getNumDiaMes() == 0 ? "" : $F{domingo}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="09273a14-23a8-4b15-99fc-c6fdeb935882">
+										<printWhenExpression><![CDATA[$F{domingo}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 1" style="table" x="10" y="170" width="80" height="50" uuid="bc43b73b-4dab-43ec-bf06-3447567d7f26"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Semana" uuid="1304c794-514a-4d4e-9152-3189f32f2b32">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{mayo}.getListaSemanas())]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="105" uuid="f3cde250-6e3e-44ed-a9b9-2ea1585f65a9">
+						<jr:tableHeader style="table_TH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="105" height="15" forecolor="#FFFFFF" uuid="336996e8-b863-41d3-aa89-e64e0dda74f2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Open Sans" size="10"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Mayo]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:column width="15" uuid="036ed9ba-dcd2-4c3c-8830-7527c495de86">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="0f2f0590-274f-4723-8ddd-648961561b46"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[L]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Lunes" x="0" y="0" width="15" height="14" uuid="f039ad84-fef8-4f61-a056-e181d945cf69"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{lunes}.getNumDiaMes() == 0 ? "" : $F{lunes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="5e76a74f-8927-4ff5-ab05-9f34de1a14ac">
+										<printWhenExpression><![CDATA[$F{lunes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="5cb943b7-48e3-4b53-a367-c8455ca17276">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="0085116c-9ed0-4404-a1fc-35176a913d87"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[M]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Martes" x="0" y="0" width="15" height="14" uuid="fd35cade-0b35-4f4b-a1f3-3c638d41eb2d"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{martes}.getNumDiaMes() == 0 ? "" : $F{martes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="714b9dbf-277e-4bb2-a640-21d2bcafb673">
+										<printWhenExpression><![CDATA[$F{martes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="904abc74-c641-474d-86cb-3d4cb1878f42">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="8ff4bcde-89af-4252-b4ad-5c05be9503d5"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[Mi]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Miercoles" x="0" y="0" width="15" height="14" uuid="9c392682-9720-41b5-874d-18d87f644051"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{miercoles}.getNumDiaMes() == 0 ? "" : $F{miercoles}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="d2ca9ebe-93ec-4552-9b0a-ee5209f8fa71">
+										<printWhenExpression><![CDATA[$F{miercoles}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="53dbd812-cfbb-4355-8e7d-eee95e3e0d48">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="872ec485-aa46-42b9-a0be-27c43c5ad6f3"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[J]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Jueves" x="0" y="0" width="15" height="14" uuid="477ebebf-c2e3-4cfc-8f93-0f8f57f77ad0"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{jueves}.getNumDiaMes() == 0 ? "" : $F{jueves}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="2aa9b8ff-440f-4b7a-8fd5-6977d28a4f7e">
+										<printWhenExpression><![CDATA[$F{jueves}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="81e2ce22-3f7f-4465-beee-bd2dd199248d">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="10c1261c-f540-4a4d-a35a-b8d5494182b2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[V]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Viernes" x="0" y="0" width="15" height="14" uuid="8932920f-d1a3-40b4-b8a0-a23c493ff603"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{viernes}.getNumDiaMes() == 0 ? "" : $F{viernes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="6f15b709-d7dd-4aba-aa11-730eb8dbed54">
+										<printWhenExpression><![CDATA[$F{viernes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="2962b314-9ceb-4ba2-8cbf-53adf9571f65">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="f788ef4c-7a95-487a-a546-f9de86c0a5a6"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[S]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Sabado" x="0" y="0" width="15" height="14" uuid="3f0c1143-8b8b-4b2c-a11e-c94a8ffcc304"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{sabado}.getNumDiaMes() == 0 ? "" : $F{sabado}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="1399d204-6390-4d14-bb68-99c43854b4e3">
+										<printWhenExpression><![CDATA[$F{sabado}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="17790416-4c19-4cef-86d1-3c24c100e9c9">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="f701e175-945b-4fec-ba0f-2e88f5112706"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[D]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Domingo" x="0" y="0" width="15" height="14" uuid="54896e49-368a-4b86-a4d0-d9b2f09509b5"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{domingo}.getNumDiaMes() == 0 ? "" : $F{domingo}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="7d15cdaf-ea3f-4bf3-9ea6-777dbc1e1d5c">
+										<printWhenExpression><![CDATA[$F{domingo}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 1" style="table" x="150" y="10" width="80" height="50" uuid="9efb829c-e55b-4b9e-ad62-3e7c3cdb56b8"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Semana" uuid="509e4f0d-67be-400c-84fb-000bfbbf57b9">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{febrero}.getListaSemanas())]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="105" uuid="f743376d-6d8a-4153-b995-5966c1e6b804">
+						<jr:tableHeader style="table_TH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="105" height="15" forecolor="#FFFFFF" uuid="691bace2-7a51-496a-8184-48b93ef25c1b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Open Sans" size="10"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Febrero]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:column width="15" uuid="2342c6c9-0912-41b3-a7bb-841e009351c5">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="292d4715-3a36-4953-8198-1b6275ca280a"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[L]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Lunes" x="0" y="0" width="15" height="14" uuid="7f8a2cc1-fe28-4f66-9a6e-71ab4d2006e4"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{lunes}.getNumDiaMes() == 0 ? "" : $F{lunes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="93f7f219-19b5-48a3-9040-5dc139cb980f">
+										<printWhenExpression><![CDATA[$F{lunes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="e2a5d33e-1456-4e9c-8727-e4e2b81f93a9">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="313ba019-d0d6-4595-b3dd-4870032b7c2a"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[M]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Martes" x="0" y="0" width="15" height="14" uuid="4bf58ac6-6e47-4768-a576-e98b3861f961"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{martes}.getNumDiaMes() == 0 ? "" : $F{martes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="ad1ee9f4-d96b-4370-a390-edf016cd0208">
+										<printWhenExpression><![CDATA[$F{martes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="3b6e55af-b6ad-4968-8b5a-ac25e3e48637">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="ba8e9b87-7a24-4aa6-960b-135481603096"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[Mi]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Miercoles" x="0" y="0" width="15" height="14" uuid="ca2bc942-6852-4d68-b01a-4d0424433b60"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{miercoles}.getNumDiaMes() == 0 ? "" : $F{miercoles}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="2fbd27c1-f096-4f52-a850-c2b53fc0126c">
+										<printWhenExpression><![CDATA[$F{miercoles}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="e7ee0dff-1c87-4f2e-8f34-4b59da574136">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="4ec318b1-1b0a-47fc-9b44-948d33b3b30c"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[J]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Jueves" x="0" y="0" width="15" height="14" uuid="0fd85321-223f-4e0d-8a6c-96424956deed"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{jueves}.getNumDiaMes() == 0 ? "" : $F{jueves}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="902ea50c-395e-42c6-8acd-e1f29eb2cadb">
+										<printWhenExpression><![CDATA[$F{jueves}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="d33799e5-3b02-44bf-8b5b-c43cebdc6474">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="333f2144-a1dc-43d6-9e48-8a1fc94fed5a"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[V]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Viernes" x="0" y="0" width="15" height="14" uuid="f66f854e-ed92-47b0-af7b-5a9e9a579e71"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{viernes}.getNumDiaMes() == 0 ? "" : $F{viernes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="0317f082-ead8-4fc6-aeb1-573234e4291b">
+										<printWhenExpression><![CDATA[$F{viernes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="4bee3bb7-7b9c-4e2e-82a7-a45ae92ec1f6">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="9d37e13e-65ce-407b-aa7a-85ac43d86994"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[S]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Sabado" x="0" y="0" width="15" height="14" uuid="c479ca6a-8d32-42ee-8d0c-829cc678840e"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{sabado}.getNumDiaMes() == 0 ? "" : $F{sabado}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="72f3ae36-51dd-4de7-b7e2-01e27b0c5471">
+										<printWhenExpression><![CDATA[$F{sabado}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="32bc5072-8dc5-4c41-9970-c7762b3f9841">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="309a3af4-556a-45ec-b0cc-12729646bca6"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[D]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Domingo" x="0" y="0" width="15" height="14" uuid="859ea5f7-5ff8-4aeb-8cfd-781a6264a7a5"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{domingo}.getNumDiaMes() == 0 ? "" : $F{domingo}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="1ae137a9-5192-4767-8310-9936be1b310a">
+										<printWhenExpression><![CDATA[$F{domingo}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 1" style="table" x="10" y="10" width="80" height="50" uuid="97145e47-6419-47f6-9e6b-287243068278"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Semana" uuid="e8a09b6e-5b55-4858-9945-525c33525e9d">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{enero}.getListaSemanas())]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="105" uuid="8019cd33-45a0-46b9-95d0-26659a7a67e7">
+						<jr:tableHeader style="table_TH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="105" height="15" forecolor="#FFFFFF" uuid="e6ce5c9a-03e5-4203-af35-c21ef509bdef"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Open Sans" size="10"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Enero]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:column width="15" uuid="62d91722-df1d-49a6-8fc2-980f999323c3">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="5f7a0b6d-6d51-41a8-b325-2481e3a2c1e8"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[L]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Lunes" x="0" y="0" width="15" height="14" uuid="1700651c-6604-45a9-b20b-d4353101f621"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{lunes}.getNumDiaMes() == 0 ? "" : $F{lunes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="8fe6ee86-936d-4c87-83d2-829fda7d9f6e">
+										<printWhenExpression><![CDATA[$F{lunes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="5513e846-2df4-4b73-930b-619395481c03">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="f6af9561-397f-4c6e-bbaa-bb1714e84428"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[M]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Martes" x="0" y="0" width="15" height="14" uuid="26ee7ac9-37f2-4efa-8d3c-1f411cc1c2f0"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{martes}.getNumDiaMes() == 0 ? "" : $F{martes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="abd77174-3179-46e6-82f6-247db055f5ab">
+										<printWhenExpression><![CDATA[$F{martes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="c3e0a604-4820-49db-9ac0-f58d0cb642ad">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="5795f428-2138-4b4c-a2b9-4997f324b4f5"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[Mi]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Miercoles" x="0" y="0" width="15" height="14" uuid="c8b6be97-6949-405f-a72c-2145e18654da"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{miercoles}.getNumDiaMes() == 0 ? "" : $F{miercoles}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="4ab22969-5ef7-49b2-93cd-b3fc6a8ba225">
+										<printWhenExpression><![CDATA[$F{miercoles}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="377566bb-9419-4d88-9560-fd43a7c6a430">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="67975e96-4ca4-424c-811d-93c09226b048"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[J]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Jueves" x="0" y="0" width="15" height="14" uuid="e52f0f5a-f9d1-4cb4-b677-38771b874e31"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{jueves}.getNumDiaMes() == 0 ? "" : $F{jueves}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="08d17e43-0236-4398-bdf5-317d7ddfcd3c">
+										<printWhenExpression><![CDATA[$F{jueves}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="a313f927-a552-42d6-be7f-61e475485bd7">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="7cfb96c7-a182-4939-bc6b-b905c3286070"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[V]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Viernes" x="0" y="0" width="15" height="14" uuid="13cc795c-d97d-4635-b06f-17a3eddb8133"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{viernes}.getNumDiaMes() == 0 ? "" : $F{viernes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="c2f7ac84-adfe-417c-b2e3-a72b37b65162">
+										<printWhenExpression><![CDATA[$F{viernes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="aed1394a-a255-4480-b295-33f21e541fd8">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="663223a6-c22b-47de-94db-f3afecdcf471"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[S]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Sabado" x="0" y="0" width="15" height="14" uuid="75580a1b-16dc-4398-9722-c94213c51947"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{sabado}.getNumDiaMes() == 0 ? "" : $F{sabado}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="3907b7ce-2615-4d1c-b75c-8a67f5b31fe4">
+										<printWhenExpression><![CDATA[$F{sabado}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="c8077320-38a1-4bcf-b800-6258111d7cf1">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="52fda577-9bcd-4970-b404-e085dba4b2e9"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[D]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="15" rowSpan="1">
+								<textField>
+									<reportElement style="Domingo" x="0" y="0" width="15" height="14" uuid="40e42598-11f6-457e-b864-623820e306ae"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{domingo}.getNumDiaMes() == 0 ? "" : $F{domingo}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="19d71dc6-9039-4ee1-b259-426f6fe41ae8">
+										<printWhenExpression><![CDATA[$F{domingo}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 1" style="table" x="430" y="170" width="80" height="50" uuid="d8fae5d1-328f-4b86-b080-187e2ce7b15b"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Semana" uuid="38a6aa54-94a1-4cf2-8e9d-59c75470bd38">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{agosto}.getListaSemanas())]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="105" uuid="a5399749-8d23-4c4e-b316-271a99366889">
+						<jr:tableHeader style="table_TH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="105" height="15" forecolor="#FFFFFF" uuid="eed15d38-3c99-4264-82ec-d594e3908f4f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Open Sans" size="10"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Agosto]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:column width="15" uuid="f68f134b-7d25-407b-a98b-fa27610651f2">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="651ed637-8520-4bfb-9635-f3ccec62de1a"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[L]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="14" rowSpan="1">
+								<textField>
+									<reportElement style="Lunes" x="0" y="0" width="15" height="14" uuid="13b489c9-8a6a-49d0-8d86-82db308c3e7f"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{lunes}.getNumDiaMes() == 0 ? "" : $F{lunes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="56430db3-5d74-4d81-9a1d-c6f02f7e1cf4">
+										<printWhenExpression><![CDATA[$F{lunes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="1084da2c-f5df-48ba-a80b-e35a6c8541d2">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="7b7d8359-a6ef-41e8-9d0e-bc1102c66549"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[M]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="14" rowSpan="1">
+								<textField>
+									<reportElement style="Martes" x="0" y="0" width="15" height="14" uuid="bb21bd35-abc3-49ae-91e7-0b6f7461c1d3"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{martes}.getNumDiaMes() == 0 ? "" : $F{martes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="b6cc291e-86f6-47f4-9401-9fbba0aa5b39">
+										<printWhenExpression><![CDATA[$F{martes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="c3b7532d-43dc-413e-ba34-e20fa5762788">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="9f7c9d45-6441-4543-94af-1250a1a5d6ad"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[Mi]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="14" rowSpan="1">
+								<textField>
+									<reportElement style="Miercoles" x="0" y="0" width="15" height="14" uuid="ad3dc189-1064-4e42-8a9f-dab878538c0c"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{miercoles}.getNumDiaMes() == 0 ? "" : $F{miercoles}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="5f5feacb-b3ba-4c75-aba3-e442a4c353c5">
+										<printWhenExpression><![CDATA[$F{miercoles}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="fb0d02f1-9cd1-4b27-9640-29a1c8673543">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="c288291c-9a84-4c78-a9ce-8dc5352e625d"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[J]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="14" rowSpan="1">
+								<textField>
+									<reportElement style="Jueves" x="0" y="0" width="15" height="14" uuid="8bdbef0b-fa23-452f-8167-d9956a2fdddc"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{jueves}.getNumDiaMes() == 0 ? "" : $F{jueves}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="41bf131f-c0e6-4aa1-b55a-231403550384">
+										<printWhenExpression><![CDATA[$F{jueves}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="f03542dd-82b2-469d-90b5-fae59ffef891">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="aa23f398-ef30-4fe5-8c7f-9f9710795b75"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[V]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="14" rowSpan="1">
+								<textField>
+									<reportElement style="Viernes" x="0" y="0" width="15" height="14" uuid="131dcede-e7c4-4e13-a12d-6a5981af4489"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{viernes}.getNumDiaMes() == 0 ? "" : $F{viernes}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="fcf9178d-5881-474e-997f-a7007a25ddd7">
+										<printWhenExpression><![CDATA[$F{viernes}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="8fdadbd1-074c-40d8-ac04-5614a8b8cdff">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="edc02930-8402-4993-b1c9-69111c837b64"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[S]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="14" rowSpan="1">
+								<textField>
+									<reportElement style="Sabado" x="0" y="0" width="15" height="14" uuid="97f162f0-214f-4f85-989a-e038f1cae78b"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{sabado}.getNumDiaMes() == 0 ? "" : $F{sabado}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="f25e5a6f-bacf-4cde-b5d5-0df92b724c44">
+										<printWhenExpression><![CDATA[$F{sabado}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="15" uuid="b988c7f7-bf90-46e4-9313-266cc078b5a2">
+							<jr:columnHeader style="table_CH" height="15" rowSpan="1">
+								<staticText>
+									<reportElement style="cabecera_mes" x="0" y="0" width="15" height="15" uuid="1c5849f4-58ad-46b4-9cbe-c80c34b234ce"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="7" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[D]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="14" rowSpan="1">
+								<textField>
+									<reportElement style="Domingo" x="0" y="0" width="15" height="14" uuid="95de5be9-5390-4b02-91fc-d678b26460d0"/>
+									<box rightPadding="1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Open Sans" size="6" isBold="true"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{domingo}.getNumDiaMes() == 0 ? "" : $F{domingo}.getNumDiaMes()]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement mode="Transparent" x="0" y="0" width="15" height="14" uuid="6ec5e28c-4bcb-4189-87ee-ca731c1d8cae">
+										<printWhenExpression><![CDATA[$F{domingo}.getClaseDia().equals("festivoLocal")]]></printWhenExpression>
+									</reportElement>
+									<imageExpression><![CDATA["C:\\IBERMUTUAMUR\\var\\workspace.nuevo_usuario\\Pruebas\\ficheros\\calendario\\FestivoLocal.png"]]></imageExpression>
+								</image>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>
