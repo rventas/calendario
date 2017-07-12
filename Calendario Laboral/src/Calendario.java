@@ -38,7 +38,7 @@ public class Calendario {
 			JasperPrint jasperPrint = JasperFillManager.fillReport(reporte, tablaParams, beanColDataSource);						  	
 	        JRExporter exporter = new JRPdfExporter(); 
 	        exporter.setParameter(JRExporterParameter.JASPER_PRINT, jasperPrint);
-	        exporter.setParameter(JRExporterParameter.OUTPUT_FILE, new java.io.File("/tmp/Calendario Laboral Jaime "+ anyo + ".pdf")); 
+	        exporter.setParameter(JRExporterParameter.OUTPUT_FILE, new java.io.File("/tmp/Calendario Laboral "+ anyo + ".pdf")); 
 	        exporter.exportReport();
 		} catch (Exception e) {
 			e.printStackTrace();
